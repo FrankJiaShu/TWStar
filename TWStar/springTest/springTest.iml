@@ -4,8 +4,8 @@
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/../spring/src/main/resources/META-INF/spring/AOP.xml</file>
-          <file>file://$MODULE_DIR$/../spring/src/main/resources/META-INF/config/IOC.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/AOP.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/IOC.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -62,5 +62,6 @@
     </orderEntry>
     <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.38" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: javax.servlet:jstl:1.2" level="project" />
   </component>
 </module>

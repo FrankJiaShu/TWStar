@@ -16,14 +16,14 @@ import javax.annotation.Resource;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})
+@ContextConfiguration(locations = {"classpath:spring/ApplicationContext.xml"})
 public class ConnTest {
     private static Logger logger = Logger.getLogger(ConnTest.class);
     @Resource
     private IUserService userService;
 
     @Test
-    public void test1() {
+    public void testService() {
         User user = userService.getUser("1","123");
          logger.info("得到的用户名为:"+user.getUserName());
         logger.info(JSON.toJSONString(user));

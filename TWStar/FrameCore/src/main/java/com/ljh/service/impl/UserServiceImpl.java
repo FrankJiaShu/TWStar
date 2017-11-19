@@ -15,13 +15,12 @@ import javax.annotation.Resource;
 public class UserServiceImpl implements IUserService {
 
     @Resource
-    private IUserDao userDao;
-    private static Logger logger;
+    private IUserDao iUserDao;
+    private static Logger logger = Logger.getLogger(UserServiceImpl.class);
 
     public User getUser(String userId,String password) {
-        logger = Logger.getLogger(UserServiceImpl.class);
         logger.info("服务层:UserServiceImpl开始执行!");
-        return userDao.selectUser(userId,password);
+        return iUserDao.selectUser(userId,password);
     }
 
 }

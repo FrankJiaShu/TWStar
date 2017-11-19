@@ -38,14 +38,5 @@ public class User {
         this.password = password == null ? null : password.trim();
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId='" + userId + '\'' +
-                ", name='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
-
 }
 

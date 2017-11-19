@@ -11,16 +11,16 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface IUserDao {
-    int deleteByPrimaryKey(String userId);
+    void deleteByPrimaryKey(String userId);
 
-    int insert(User user);
+    void insert(User user);
 
-    int insertSelective(User user);
+    void insertSelective(User user);
     /*动态代理多参数传值加@Param*/
     User selectUser(@Param("userId")String userId, @Param("password")String password);
 
-    int updateByPrimaryKeySelective(User user);
+    void updateByPrimaryKeySelective(User user);
 
-    int updateByPrimaryKey(User user);
+    void updateByPrimaryKey(User user);
 
 }
