@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ljh.dao.IUserDao" >
+
+    <resultMap id="BaseResultMap" type="com.ljh.model.User" >
+        <result column="USER_ID" property="userId" jdbcType="VARCHAR" />
+        <result column="USER_NAME" property="userName" jdbcType="VARCHAR" />
+        <result column="PASSWORD" property="password" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        USER_ID, USER_NAME, PASSWORD
+    </sql>
+
+    <select id="selectUser" resultMap="BaseResultMap" parameterType="com.ljh.model.User" >
+        select
+        <include refid="Base_Column_List" />
+        from user
+        where USER_ID = #{userId,jdbcType=VARCHAR}
+        and PASSWORD = #{password,jdbcType=VARCHAR}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="com.ljh.model.User" >
+        delete from user
+        where USER_ID =#{userId,jdbcType=VARCHAR}
+    </delete>
+
+    <insert id="insertUser" parameterType="com.ljh.model.User"  >
+        insert into user (USER_ID, USER_NAME, PASSWORD)
+        values (
+                #{userId,jdbcType=VARCHAR},
+                #{userName,jdbcType=VARCHAR},
+                #{password,jdbcType=VARCHAR}
+               )
+    </insert>
+
+    <insert id="insertSelective" parameterType="com.ljh.model.User" >
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="userId != null" >
+                USER_ID,
+            </if>
+            <if test="userName != null" >
+                USER_NAME,
+            </if>
+            <if test="password != null" >
+                PASSWORD,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="userId != null" >
+                #{userId,jdbcType=VARCHAR},
+            </if>
+            <if test="userName != null" >
+                #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null" >
+                #{password,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.ljh.model.User" >
+        update user
+        <set >
+            <if test="userName != null" >
+                USER_NAME = #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null" >
+                PASSWORD = #{password,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where USER_ID = #{userId,jdbcType=VARCHAR}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.ljh.model.User" >
+    update user
+    set USER_NAME = #{userName,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=VARCHAR}
+  </update>
+
+</mapper>
