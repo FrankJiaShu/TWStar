@@ -1,8 +1,8 @@
-# TWStar
-2017-11-10 I wanna build a project which could manage NWU's dancing crew.And I believe,it should be a system called TWStar.
+# MY SECOND PROJECT  
+![](https://github.com/FrankJiaShu/TWStar/blob/master/images/markdown.jpg?raw=true)  
+## As the author of my project, I wanna show you a better system.  
+## **Look at me! The project is designed by *FrankJiaShu.***  
+**if you have any questions,please send to my email:** <liujhr@dcits.com>  
 
-2017-11-13 Add spring MVC framework designed in TWStar.
-
-2017-11-19 Now it's a SSM(springmvc+spring+mybatis) project with JSTL. Of course,MySql is my default database.when it's comes to provide datasource,I  choose the Durid developed by alibaba which has a high-level-performance in my company.
-
-2017-11-30 The project could create new account for my crews,fantastic~ I changed the main jsp,added ajax in it,so that they could response faster in our browser or explorer.
+## Here is my GitHub repository
+> ### [***https://github.com/FrankJiaShu***](https://github.com/FrankJiaShu)
